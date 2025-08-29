@@ -4,19 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi primera pagina</title>
+    <style>
+        /* Fondo con transición */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(270deg, #ff7675, #74b9ff, #55efc4);
+            background-size: 600% 600%;
+            animation: moverFondo 15s ease infinite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+        }
+
+        @keyframes moverFondo {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Animación de entrada */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Card estilo */
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+            margin: 20px;
+            padding: 20px;
+            max-width: 400px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            
+            /* animación de entrada */
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        /* Delay diferente para cada card */
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
+        .card:nth-child(4) { animation-delay: 0.8s; }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: #2d3436;
+        }
+    </style>
 </head>
 <body>
     
-    <h1>Estadio Barranquilla</h1>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWlSsNNdiC-PQG1gR7oF5OCx48ngh_5eUYiw&s" alt ="Imagen del estadio">
-    <h1>EQUIPO JUNIOR</h1>
-    <img src="https://capsulas.com.co/wp-content/uploads/2019/11/Tolima-alineacion-27-600x462.jpg" alt ="Imagen del EQUIPO">
-    <h1>EQUIPO RIVAL</h1>
-    <img src="https://www.futbolred.com/files/article_main/uploads/2025/02/26/67bfac37c6015.jpeg" alt ="Imagen del EQUIPO rival">
-    <h1>IMAGEN ALAETORIA</h1>
-    <img src="https://picsum.photos/200/300" alt ="Imagen ALEATORia">
+    <div class="card">
+        <h1>Estadio Barranquilla</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWlSsNNdiC-PQG1gR7oF5OCx48ngh_5eUYiw&s" alt="Imagen del estadio">
+    </div>
 
+    <div class="card">
+        <h1>Equipo Junior</h1>
+        <img src="https://capsulas.com.co/wp-content/uploads/2019/11/Tolima-alineacion-27-600x462.jpg" alt="Imagen del EQUIPO">
+    </div>
 
+    <div class="card">
+        <h1>Equipo Rival</h1>
+        <img src="https://www.futbolred.com/files/article_main/uploads/2025/02/26/67bfac37c6015.jpeg" alt="Imagen del EQUIPO rival">
+    </div>
+
+    <div class="card">
+        <h1>Imagen Aleatoria</h1>
+        <img src="https://picsum.photos/200/300" alt="Imagen ALEATORIA">
+    </div>
 
 </body>
 </html>
