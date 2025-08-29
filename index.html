@@ -1,99 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi primera pagina</title>
-    <style>
-        /* Fondo con transición */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(270deg, #ff7675, #74b9ff, #55efc4);
-            background-size: 600% 600%;
-            animation: moverFondo 15s ease infinite;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 30px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi primera pagina</title>
+  <style>
+    /* Fondo animado */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(270deg, #ff7675, #74b9ff, #55efc4);
+      background-size: 600% 600%;
+      animation: moverFondo 15s ease infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
 
-        @keyframes moverFondo {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+    @keyframes moverFondo {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-        /* Animación de entrada */
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    /* Animación de entrada */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
 
-        /* Card estilo */
-        .card {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-            margin: 20px;
-            padding: 20px;
-            max-width: 400px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            
-            /* animación de entrada */
-            opacity: 0;
-            animation: fadeInUp 1s ease forwards;
-        }
+    /* Estilo de las cards */
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+      margin: 20px;
+      padding: 20px;
+      max-width: 400px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+    }
 
-        /* Delay diferente para cada card */
-        .card:nth-child(1) { animation-delay: 0.2s; }
-        .card:nth-child(2) { animation-delay: 0.4s; }
-        .card:nth-child(3) { animation-delay: 0.6s; }
-        .card:nth-child(4) { animation-delay: 0.8s; }
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+    .card:nth-child(4) { animation-delay: 0.8s; }
 
-        .card:hover {
-            transform: scale(1.05);
-        }
+    .card:hover {
+      transform: scale(1.05);
+    }
 
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
 
-        h1 {
-            font-size: 1.5rem;
-            color: #2d3436;
-        }
-    </style>
+    h1 {
+      font-size: 1.6rem;
+      color: #2d3436;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #636e72;
+      margin: 10px 0 15px;
+    }
+
+    /* Botones */
+    button {
+      background: #0984e3;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    button:hover {
+      background: #74b9ff;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-    
-    <div class="card">
-        <h1>Estadio Barranquilla</h1>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWlSsNNdiC-PQG1gR7oF5OCx48ngh_5eUYiw&s" alt="Imagen del estadio">
-    </div>
 
-    <div class="card">
-        <h1>Equipo Junior</h1>
-        <img src="https://capsulas.com.co/wp-content/uploads/2019/11/Tolima-alineacion-27-600x462.jpg" alt="Imagen del EQUIPO">
-    </div>
+  <div class="card">
+    <h1>Estadio Barranquilla</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWlSsNNdiC-PQG1gR7oF5OCx48ngh_5eUYiw&s" alt="Imagen del estadio">
+    <p>El estadio Metropolitano Roberto Meléndez es el principal escenario deportivo de Barranquilla y casa de la Selección Colombia.</p>
+    <button onclick="alert('¡Este es el estadio del Junior y de la Selección Colombia!')">Ver más</button>
+  </div>
 
-    <div class="card">
-        <h1>Equipo Rival</h1>
-        <img src="https://www.futbolred.com/files/article_main/uploads/2025/02/26/67bfac37c6015.jpeg" alt="Imagen del EQUIPO rival">
-    </div>
+  <div class="card">
+    <h1>Equipo Junior</h1>
+    <img src="https://capsulas.com.co/wp-content/uploads/2019/11/Tolima-alineacion-27-600x462.jpg" alt="Imagen del EQUIPO">
+    <p>El Junior de Barranquilla es uno de los equipos más importantes de Colombia, con múltiples títulos en la liga profesional.</p>
+    <button onclick="alert('¡Vamos Junior! ❤️🤍')">Apoyar</button>
+  </div>
 
-    <div class="card">
-        <h1>Imagen Aleatoria</h1>
-        <img src="https://picsum.photos/200/300" alt="Imagen ALEATORIA">
-    </div>
+  <div class="card">
+    <h1>Equipo Rival</h1>
+    <img src="https://www.futbolred.com/files/article_main/uploads/2025/02/26/67bfac37c6015.jpeg" alt="Imagen del EQUIPO rival">
+    <p>El clásico rival siempre es un partido emocionante que llena de pasión a los hinchas del fútbol colombiano.</p>
+    <button onclick="alert('¡Preparados para el clásico! ⚽🔥')">Ver estadísticas</button>
+  </div>
+
+  <div class="card">
+    <h1>Imagen Aleatoria</h1>
+    <img id="randomImage" src="https://picsum.photos/200/300" alt="Imagen ALEATORIA">
+    <p>Cada vez que pulses el botón se cargará una imagen aleatoria desde Picsum Photos.</p>
+    <button onclick="cambiarImagen()">Cambiar Imagen</button>
+  </div>
+
+  <script>
+    function cambiarImagen() {
+      const randomNum = Math.floor(Math.random() * 1000);
+      document.getElementById("randomImage").src = `https://picsum.photos/200/300?random=${randomNum}`;
+    }
+  </script>
 
 </body>
 </html>
